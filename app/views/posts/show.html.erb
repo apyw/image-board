@@ -1,0 +1,19 @@
+
+  <div class="columns">
+    <div class="column is-8">
+      <h1 class="title is-4 pt-3"><%= @post.title %></h1>
+      <div class="feature-image">
+        <%= image_tag(@post.image_url(:default).to_s) %>
+      </div>
+
+      <% if @post.source? %>
+        <h3 class="subtitle is-6">Source: </h3><%= @post.source %></li>
+      <% end %>
+    </div>
+  </div>
+
+
+
+<%= link_to 'Back', posts_path %> |
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>

@@ -14,4 +14,18 @@
  *= require_self
  */
 
- @import "bulma";
+@import "bulma";
+
+.post-index-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  
+  img{
+    max-width: 95%;
+    width: 400px;
+    height: auto;
+    &:hover { opacity: 0.9; }
+  }
+}
+
+

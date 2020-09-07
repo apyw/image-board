@@ -1,0 +1,10 @@
+
+  <div class="post-index-grid pt-3">
+    <% @posts.each do |post| %>
+      <%= link_to image_tag(post.image_url(:thumb).to_s), post %>
+      <% end %>
+    </div>
+  </div>
+
+
+

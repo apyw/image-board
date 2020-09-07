@@ -17,7 +17,7 @@
         <% end %>
         <% if user_signed_in? %>
           <div class="navbar-item">
-            <%= link_to "Add Image", "#", class:"button is-warning is-inverted is-outlined" %>
+            <%= link_to "Add Image", new_post_path, class:"button is-warning is-inverted is-outlined" %>
           </div>
         <% end %>
       </div>
@@ -47,8 +47,12 @@
 
       </div>
     </nav>
+      
+      <%= yield(:header) %>
+      
       <div class="container">
+        <%= yield %>  
       </div>
-      <%= yield %>
+      
     </body>
   </html>
