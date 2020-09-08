@@ -23,9 +23,13 @@
   img{
     max-width: 95%;
     width: 400px;
-    height: auto;
+    height: 200px;
+    object-fit: cover;
     &:hover { opacity: 0.9; }
   }
 }
 
+.hero-body{
+    height: 100px;
+}
 

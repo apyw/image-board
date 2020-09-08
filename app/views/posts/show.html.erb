@@ -1,19 +1,31 @@
+<% content_for :header do %>
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title is-3">
+        <%= @post.title %>
+      </h1>
+    </div>
+  </div>
+</section>
+<% end %>
 
   <div class="columns">
     <div class="column is-8">
-      <h1 class="title is-4 pt-3"><%= @post.title %></h1>
       <div class="feature-image">
         <%= image_tag(@post.image_url(:default).to_s) %>
       </div>
 
       <% if @post.source? %>
-        <h3 class="subtitle is-6">Source: </h3><%= @post.source %></li>
+        <h3 class="subtitle is-6">Source: <%= @post.source %></h3>
       <% end %>
+      <h3 class="subtitle is-6">Submitted by: <%= @post.user.name %></h3>
     </div>
   </div>
 
+<%= link_to 'Back', posts_path %> 
+<% if post_author(@post) %>
+    | <%= link_to 'Edit', edit_post_path(@post) %>
+    | <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 
-
-<%= link_to 'Back', posts_path %> |
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>

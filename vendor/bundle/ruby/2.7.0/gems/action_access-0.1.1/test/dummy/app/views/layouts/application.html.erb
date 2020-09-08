@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ActionAccess Dummy App</title>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <% if message = flash[:notice] || flash[:alert] %>
+    <p><%= message %></p>
+  <% end %>
+
+  <%= yield %>
+</body>
+</html>

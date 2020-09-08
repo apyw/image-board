@@ -1,0 +1,32 @@
+language: ruby
+sudo: false
+cache: bundler
+
+deploy:
+  provider: rubygems
+  api_key:
+    secure: CBWxNianEdrWCwROIJIINwTbVLkabVA+RiUo5bzNyLmOQAqNd8yBcAdqcxMpOjrKkrBm2oKgZpEreLuMdsifOWyVIchXid0uiqZGWCcHhoE2xdnUijR0AisvshwwMQN6JZb90YpIDRNj9MfkM9KyvjXrVKDjpqL2V/e43z1vUIw=
+  on:
+    tags: true
+
+rvm:
+  - 2.2.5
+  - 2.3.1
+  - ruby-head
+
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+  fast_finish: true
+
+before_install:
+  - gem install bundler
+  - bundler --version
+
+before_script:
+  - bundle update
+
+script: bundle exec rake test
+
+notifications:
+  email: false
