@@ -1,5 +1,5 @@
 # Image Board
-Winter 2021 - Shopify Developer Intern Challenge Question
+Winter 2021 - Shopify Developer Intern Challenge Question </br>
 TASK: Build an image repository
 ![](resources/demo/index.png)
 
