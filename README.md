@@ -16,4 +16,4 @@ TASK: Build an image repository
 
 ## To Do
 1. Implement search feature
-
+2. Improve stylesheets
